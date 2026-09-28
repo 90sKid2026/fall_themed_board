@@ -1,0 +1,175 @@
+/* Main Layout Background */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #262626; /* Dark wooden desk style background */
+  background-image: radial-gradient(#404040 1px, transparent 1px);
+  background-size: 20px 20px;
+  color: #1e293b;
+  padding: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.flashcard-wrapper {
+  width: 100%;
+  max-width: 28rem;
+}
+
+/* Header & Progress Counter */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #a3a3a3;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.card-title {
+  color: #f5f5f5;
+  letter-spacing: 0.5px;
+}
+
+/* 3D Flip Card Scene */
+.card-scene {
+  width: 100%;
+  height: 17rem;
+  cursor: pointer;
+  perspective: 1200px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.5),
+    0 4px 6px -2px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+/* Shared Paper Styles */
+.card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-sizing: border-box;
+}
+
+/* Front Side: Off-white Paper Index Card with Red Header Rule */
+.card-front {
+  background-color: #fdfbf7;
+  border: 1px solid #e5e0d8;
+  background-image: linear-gradient(to bottom, transparent 2.5rem, #f87171 2.5rem, #f87171 2.6rem, transparent 2.6rem);
+}
+
+/* Back Side: Classic Lined Index Card with Red Margin Line */
+.card-back {
+  background-color: #fdfbf7;
+  border: 1px solid #e5e0d8;
+  transform: rotateY(180deg);
+  background-image: 
+    linear-gradient(to right, transparent 3.2rem, #fca5a5 3.2rem, #fca5a5 3.3rem, transparent 3.3rem),
+    repeating-linear-gradient(transparent, transparent 1.75rem, #93c5fd 1.75rem, #93c5fd 1.8rem);
+}
+
+/* Category Badge */
+.category-badge {
+  align-self: flex-end;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px dashed #cbd5e1;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Text Content Styling */
+.question-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  color: #1e293b;
+  margin: 0;
+  padding: 0 0.5rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.answer-text {
+  font-size: 1.05rem;
+  line-height: 1.8rem;
+  text-align: left;
+  color: #0f172a;
+  margin: 0;
+  padding-left: 2.2rem;
+  font-weight: 600;
+  white-space: pre-line;
+}
+
+.hint-text {
+  font-size: 0.75rem;
+  text-align: center;
+  color: #94a3b8;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.btn-secondary {
+  background-color: #404040;
+  color: #e5e5e5;
+  border: 1px solid #525252;
+}
+
+.btn-secondary:hover {
+  background-color: #525252;
+}
+
+.btn-primary {
+  background-color: #e11d48;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(225, 29, 72, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #f43f5e;
+}
